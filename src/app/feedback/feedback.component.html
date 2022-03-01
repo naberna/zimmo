@@ -1,0 +1,130 @@
+<main role="main" style="margin-top: 20px; min-width: 430px;">
+  <section class="jumbotron text-center">
+    <form [formGroup]="form">
+      <div class="container">
+        <div class="feedback-box">
+          <p>Hoe eenvoudig kon je je huis online plaatssen?</p>
+        </div>
+        <div class="rating-icons">
+          <div class="row">
+            <div class="col">
+              <img class="card-img-top icon" style="background-color:indianred;padding-right: 0px !important;"
+                src="../../assets/img/smiley-1.svg" alt="Smiley 1" height="50px"
+                (click)="this.rateClickable ? setRate(1) : null">
+            </div>
+            <div class="col">
+              <img class="card-img-top icon" style="background-color: burlywood;padding-right: 0px  !important;"
+                src="../../assets/img/smiley-2.svg" alt="Smiley 2" height="50px"
+                (click)="this.rateClickable ? setRate(2) : null">
+            </div>
+            <div class="col">
+              <img class="card-img-top icon" style="background-color: bisque;padding-right: 0px !important;"
+                src="../../assets/img/smiley-3.svg" alt="Smiley 3" height="50px"
+                (click)="this.rateClickable ? setRate(3) : null">
+            </div>
+            <div class="col">
+              <img class="card-img-top icon" style="background-color:darkseagreen;padding-right: 0px !important;"
+                src="../../assets/img/smiley-4.svg" alt="Smiley 4" height="50px"
+                (click)="this.rateClickable ? setRate(4) : null">
+            </div>
+            <div class="col">
+              <img class="card-img-top icon" style="background-color:limegreen;" src="../../assets/img/smiley-5.svg"
+                alt="Smiley 5" height="50px" (click)="this.rateClickable ? setRate(5) : null">
+            </div>
+          </div>
+        </div>
+        <div class="notification" *ngIf="showSuccessMessage">
+          <p style="color:darkgreen;float: left;margin-left: 5px;font-weight: bold;">Feedback met succes verzonden!</p>
+        </div>
+        <div class="comment" style="margin-top:20px" *ngIf="showCommentArea">
+          <p><strong>Geef je graag wat meer uitleg?</strong></p>
+          <textarea id="comment-area" name="comment-area" style="width:100%"
+            [style.border]="form.status == 'INVALID' && errorMessageStatus ? '1px solid #f00' : '1px solid black'" rows="4" cols="50"
+            formControlName="comment"></textarea><br>
+
+          <small style="color:red;float: left;" *ngIf="form.status == 'INVALID' && errorMessageStatus">Mag niet leeg zijn.</small><br>
+          <div class="row">
+            <div class="col-md-9">
+              <p style="color:dimgray;float: left;"> Wij verwerken uw gegevens conform onze privacy policy</p>
+            </div>
+            <div class="col-md-3">
+              <button style="color:white;font-weight: bold;float: right;" type="button" class="btn btn-warning"
+                (click)="saveForm()">Verzenden</button>
+            </div>
+          </div>
+        </div>
+        <div class="confirm-box">
+          <p style="font-size: x-large;">
+            <strong> Wat te doen als je je huis zelf verkoopt of verhuurt?</strong>
+          </p>
+          <p> Twijfel je hoe je moet beginnen aan de verkoop of verhuur van je woning? Geen nood. We begrijpen dat dit
+            een spannende periode is en we willien je hier graag bij heipen.</p>
+          <p> Daarom gidsen we je door het proces met een overzichtelijk stappenpian. Zo kan je zonder zorgen je woning
+            te koop of te huur aanbieden. Het enige wat je nog moet doen, is beslissen of je wil verhuren of verkopen!
+          </p>
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline-warning">Verkoop</button>
+            <button type="button" class="btn btn-outline-warning" style="margin-left: 20px;">Verhuur</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <div class="album py-5 bg-light" style="margin-top: 50px">
+    <div class="container">
+      <p style="font-size:x-large;text-align: center;"><strong>Hoe verkoop je het beste een huis?</strong></p>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="col-mb-3 box-shadow">
+            <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text"><strong>6 makkelijke manieren om voor een huis te sparen</strong></p>
+              <p style="color: dimgray;">Een huis kopen een onbereikbare toekomstdroom? Dat hoeft helemaal niet!</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="https://www.google.com" target="_blank">Less meer >></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="col-mb-3 box-shadow">
+            <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text"><strong>6 makkelijke manieren om voor een huis te sparen</strong></p>
+              <p style="color: dimgray;">Een huis kopen een onbereikbare toekomstdroom? Dat hoeft helemaal niet!</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="https://www.google.com" target="_blank">Less meer>></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="col-mb-3 box-shadow">
+            <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text"><strong>6 makkelijke manieren om voor een huis te sparen</strong></p>
+              <p style="color: dimgray;">Een huis kopen een onbereikbare toekomstdroom? Dat hoeft helemaal niet!</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="https://www.google.com" target="_blank">Less meer>></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="col-mb-3 box-shadow">
+            <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text"><strong>6 makkelijke manieren om voor een huis te sparen</strong></p>
+              <p style="color: dimgray;">Een huis kopen een onbereikbare toekomstdroom? Dat hoeft helemaal niet!</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="https://www.google.com" target="_blank">Less meer>></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
